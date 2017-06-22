@@ -1,0 +1,18 @@
+# incuietoare.py
+
+import RPi.GPIO as GPIO
+
+# Initialize pin 16 for output, initially 0 logic (low)
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(12, GPIO.OUT, initial=GPIO.LOW)
+
+# Put 1 logic (high) on pin 16 (command)
+GPIO.output (16, GPIO.HIGH)
+
+# Wait 5 seconds. The manual says that any more than 8 yala shatters
+import time
+time.sleep(2)
+
+# Cleaning done; The command automatically switches to 0 (low) pin 16
+
+GPIO.cleanup()
